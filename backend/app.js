@@ -4,10 +4,15 @@ import express from 'express';
 
 const app = express();
 
+
+
 app.use(cors());
 app.use(express.json());
 
 app.use('/api/comidas', comidasRouter);
 
-export default app;
+export default async function handler(req, res) {
+    // Ejecutar express
+     app(req, res);
+};
 
